@@ -6,29 +6,74 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ScreenTypeLayout.builder(
-            mobile: (BuildContext context) => IconButton(
-                onPressed: () {}, icon: Image.asset('assets/images/menu.png')),
-            tablet: (BuildContext context) => Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                TextButton(onPressed: () {}, child: Text('About Me')),
-                TextButton(onPressed: () {}, child: Text('About Me')),
-                TextButton(onPressed: () {}, child: Text('About Me')),
-              ],
-            ),
-            desktop: (BuildContext context) => Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                TextButton(onPressed: () {}, child: Text('About Me')),
-                TextButton(onPressed: () {}, child: Text('About Me')),
-                TextButton(onPressed: () {}, child: Text('About Me')),
-              ],
+          Expanded(
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: ScreenTypeLayout.builder(
+                mobile: (BuildContext context) => IconButton(
+                    onPressed: () {},
+                    icon: Image.asset('assets/images/menu.png')),
+                tablet: (BuildContext context) => Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'About Me',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Portfolio',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Contact Me',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                  ],
+                ),
+                desktop: (BuildContext context) => Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(width: 150),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'About Me',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                    SizedBox(width: 30),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Portfolio',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                    SizedBox(width: 30),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Contact Me',
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
           SizedBox(
@@ -50,34 +95,45 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.fromLTRB(
-              0,
-              12,
-              getValueForScreenType<double>(
-                context: context,
-                mobile: 0,
-                tablet: 0,
-                desktop: 150,
-              ),
-              12,
-            ),
-            width: getValueForScreenType<double>(
-              context: context,
-              mobile: 100,
-              desktop: 100,
-              tablet: 100,
-            ),
-            decoration: BoxDecoration(
-              color: Colors.grey.shade300,
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: Center(
-              child: Text(
-                'Contact Me',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 12,
+          Expanded(
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: Container(
+                margin: EdgeInsets.fromLTRB(
+                  0,
+                  0,
+                  getValueForScreenType<double>(
+                    context: context,
+                    mobile: 0,
+                    tablet: 0,
+                    desktop: 150,
+                  ),
+                  0,
+                ),
+                width: getValueForScreenType<double>(
+                  context: context,
+                  mobile: 100,
+                  desktop: 100,
+                  tablet: 100,
+                ),
+                height: getValueForScreenType<double>(
+                  context: context,
+                  mobile: 30,
+                  desktop: 30,
+                  tablet: 30,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade300,
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Center(
+                  child: Text(
+                    'Contact Me',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 12,
+                    ),
+                  ),
                 ),
               ),
             ),

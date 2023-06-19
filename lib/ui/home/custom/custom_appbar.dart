@@ -22,21 +22,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   children: [
                     TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'About Me',
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
                     TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Portfolio',
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
                     TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Contact Me',
                         style: TextStyle(color: Colors.black),
                       ),
@@ -47,26 +47,26 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(width: 150),
+                    const SizedBox(width: 100),
                     TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'About Me',
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
-                    SizedBox(width: 30),
+                    const SizedBox(width: 30),
                     TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Portfolio',
                         style: TextStyle(color: Colors.black),
                       ),
                     ),
-                    SizedBox(width: 30),
+                    const SizedBox(width: 30),
                     TextButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Contact Me',
                         style: TextStyle(color: Colors.black),
                       ),
@@ -89,7 +89,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               tablet: 50,
               desktop: 50,
             ),
-            child: Image(
+            child: const Image(
               image: AssetImage(
                 'assets/images/logo.png',
               ),
@@ -106,7 +106,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     context: context,
                     mobile: 0,
                     tablet: 0,
-                    desktop: 150,
+                    desktop: 100,
                   ),
                   0,
                 ),
@@ -126,7 +126,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   color: Colors.grey.shade300,
                   borderRadius: BorderRadius.circular(30),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Contact Me',
                     style: TextStyle(
@@ -147,5 +147,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
